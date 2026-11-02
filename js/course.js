@@ -84,7 +84,7 @@
   });
 
   // ---------- Pagina saptamanii ----------
-  route(/^\/learning\/(matematica|claude)\/(s\d)$/, (cid, wid) => {
+  route(/^\/learning\/(matematica|claude)\/(s\d+)$/, (cid, wid) => {
     const c = window.COURSES[cid];
     const wk = c.weeks.find((x) => x.id === wid);
     if (!wk) { location.hash = `#/learning/${cid}`; return; }
@@ -437,7 +437,7 @@
     draw();
   }
 
-  route(/^\/learning\/(matematica|claude)\/(s\d)\/(\d+)$/, (cid, wid, n) => {
+  route(/^\/learning\/(matematica|claude)\/(s\d+)\/(\d+)$/, (cid, wid, n) => {
     const c = window.COURSES[cid];
     const wk = c.weeks.find((x) => x.id === wid);
     const s = wk && wk.sessions.find((x) => x.n === Number(n));

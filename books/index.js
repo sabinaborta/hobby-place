@@ -618,5 +618,83 @@ window.BOOK_SOURCES = {
 "src": "Project Gutenberg #37134",
 "url": "https://www.gutenberg.org/ebooks/37134",
 "lang": "en"
+},
+"b121": {
+"src": "Project Gutenberg #1080",
+"url": "https://www.gutenberg.org/ebooks/1080",
+"lang": "en",
+"ro": {
+"src": "Wikisource",
+"url": "https://ro.wikisource.org/wiki/O_modest%C4%83_propunere"
+}
+},
+"b122": {
+"src": "Project Gutenberg #61",
+"url": "https://www.gutenberg.org/ebooks/61",
+"lang": "en",
+"ro": {
+"src": "Wikisource",
+"url": "https://ro.wikisource.org/wiki/Manifestul_Partidului_Comunist"
+}
+},
+"b123": {
+"src": "Project Gutenberg #1952",
+"url": "https://www.gutenberg.org/ebooks/1952",
+"lang": "en"
+},
+"b124": {
+"src": "Project Gutenberg #773",
+"url": "https://www.gutenberg.org/ebooks/773",
+"lang": "en"
+},
+"b125": {
+"src": "Project Gutenberg #2148",
+"url": "https://www.gutenberg.org/ebooks/2148",
+"lang": "en"
+},
+"b126": {
+"src": "Project Gutenberg #6157",
+"url": "https://www.gutenberg.org/ebooks/6157",
+"lang": "en"
+},
+"b127": {
+"src": "Project Gutenberg #1429",
+"url": "https://www.gutenberg.org/ebooks/1429",
+"lang": "en"
+},
+"b128": {
+"src": "Project Gutenberg #344",
+"url": "https://www.gutenberg.org/ebooks/344",
+"lang": "en"
+},
+"b129": {
+"src": "Project Gutenberg #1656",
+"url": "https://www.gutenberg.org/ebooks/1656",
+"lang": "en"
+},
+"b130": {
+"src": "Project Gutenberg #31",
+"url": "https://www.gutenberg.org/ebooks/31",
+"lang": "en"
+},
+"b131": {
+"src": "Project Gutenberg #2017",
+"url": "https://www.gutenberg.org/ebooks/2017",
+"lang": "en"
+},
+"b132": {
+"src": "Project Gutenberg #160",
+"url": "https://www.gutenberg.org/ebooks/160",
+"lang": "en"
+},
+"b133": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/Goblin_Market_and_Other_Poems_%281862%29/Goblin_Market",
+"lang": "en"
+},
+"b134": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/Keats%3B_poems_published_in_1820/The_Eve_of_St._Agnes",
+"lang": "en"
 }
 };

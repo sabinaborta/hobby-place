@@ -119,7 +119,21 @@ Eseuri|Essays: First Series|Ralph Waldo Emerson|Non-ficțiune
 Bunul-simț|Common Sense|Thomas Paine|Non-ficțiune
 Democrația în America|Democracy in America|Alexis de Tocqueville|Non-ficțiune
 Manualul lui Epictet|The Enchiridion|Epictet|Non-ficțiune
-Elementele stilului|The Elements of Style|William Strunk|Non-ficțiune`;
+Elementele stilului|The Elements of Style|William Strunk|Non-ficțiune
+O modestă propunere|A Modest Proposal|Jonathan Swift|Non-ficțiune
+Manifestul Partidului Comunist|The Communist Manifesto|Karl Marx și Friedrich Engels|Non-ficțiune
+Tapetul galben|The Yellow Wall-Paper|Charlotte Perkins Gilman|Povestiri
+Crima lordului Arthur Savile|Lord Arthur Savile's Crime|Oscar Wilde|Povestiri
+Inima povestitoare|The Tell-Tale Heart|Edgar Allan Poe|Povestiri
+De cât pământ are nevoie omul?|How Much Land Does a Man Need?|Lev Tolstoi|Povestiri
+Miss Brill|Miss Brill|Katherine Mansfield|Povestiri
+Olalla|Olalla|Robert Louis Stevenson|Povestiri
+Apărarea lui Socrate|Socrates' Defence|Platon|Non-ficțiune
+Antigona|Antigone|Sofocle|Teatru
+Dhammapada|The Dhammapada|Tradiția budistă|Non-ficțiune
+O pereche de ciorapi de mătase|A Pair of Silk Stockings|Kate Chopin|Povestiri
+Piața spiridușilor|Goblin Market|Christina Rossetti|Poezie
+Ajunul Sfintei Agnes|The Eve of St Agnes|John Keats|Poezie`;
 
   window.BOOKS = raw.split('\n').map((line, i) => {
     const [title, orig, author, genre, ro] = line.split('|');

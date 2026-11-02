@@ -15,9 +15,9 @@
   window.COURSES = {
     matematica: {
       id: 'matematica', short: 'Matematică', title: 'Matematică',
-      lead: 'Primele 4 săptămâni din planul tău de recapitulare.',
+      lead: 'Primele 11 săptămâni din planul tău de recapitulare: gimnaziu și liceu, clasele 5–12.',
       intro: `<p>${plan.rhythm}</p><p>${plan.rule}</p>`,
-      weeks: [W1, window.MATH_WEEK2, window.MATH_WEEK3, window.MATH_WEEK4],
+      weeks: [W1, window.MATH_WEEK2, window.MATH_WEEK3, window.MATH_WEEK4, window.MATH_WEEK5, window.MATH_WEEK6, window.MATH_WEEK7, window.MATH_WEEK8, window.MATH_WEEK9, window.MATH_WEEK10, window.MATH_WEEK11],
       after: `<details class="plan-box"><summary><b>Tot planul, pe 5 faze</b></summary><ul>${phases}</ul></details>
         <a class="btn ghost" style="align-self:flex-start" href="#/learning/matematica/antrenament">Exerciții suplimentare pe clase</a>`,
     },

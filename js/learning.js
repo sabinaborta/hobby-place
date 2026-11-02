@@ -32,8 +32,8 @@
     const started = window.SPANISH_UNITS.filter((u) => unitProgress(u).checked > 0).length;
     view.innerHTML = `<div><h1 class="h1">Learning</h1><p class="lead">Lecții pe rând: teorie, exemple, exerciții scrise.</p></div>
       <section class="subjects">
-        <a class="subject-row" href="#/learning/spaniola"><span><b>Spaniolă</b><small>După manualul Gente Hoy 1 · 4 săptămâni · ${window.SPANISH_UNITS.length} unități din ${window.SPANISH_UNITS.length + window.SPANISH_NEXT.length} · ${started} începute</small></span><span class="arrow" aria-hidden="true">→</span></a>
-        <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>4 săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="subject-row" href="#/learning/spaniola"><span><b>Spaniolă</b><small>După manualul Gente Hoy 1 · ${window.SPANISH_WEEKS.length} săptămâni · ${window.SPANISH_UNITS.length} unități · ${started} începute</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>11 săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="subject-row" href="#/learning/claude"><span><b>Examen Claude (CCAR-F)</b><small>4 săptămâni: lecții, 2 examene de probă, fișe</small></span><span class="arrow" aria-hidden="true">→</span></a>
       </section>`;
   });
@@ -56,7 +56,7 @@
       <div class="headrow"><div><h1 class="h1">Spaniolă A1–A2</h1><p class="lead">Unitățile urmează ordinea din <i>Gente Hoy 1</i>.</p></div>
       ${location.protocol === 'file:' ? `<div class="chips"><a class="btn ghost" href="${book.student}" target="_blank" rel="noopener">Manualul</a><a class="btn ghost" href="${book.workbook}" target="_blank" rel="noopener">Caietul de exerciții</a></div>` : ''}</div>
       <section class="unit-list"><a class="unit-row" href="#/learning/spaniola/povesti"><span class="unit-main"><b>Povești scurte</b><small>Citești și subliniezi cuvintele pe care nu le știi</small></span><span class="arrow" aria-hidden="true">→</span></a><a class="unit-row" href="#/learning/spaniola/dictare"><span class="unit-main"><b>Dictare</b><small>Asculți propoziții din povești și le scrii</small></span><span class="arrow" aria-hidden="true">→</span></a><a class="unit-row" href="#/learning/spaniola/cuvinte"><span class="unit-main"><b>Cuvintele mele</b><small>Lista ta, cu traduceri și recapitulare</small></span><span class="arrow" aria-hidden="true">→</span></a></section>
-      ${rows}<section class="grade"><h2>După primele 4 săptămâni</h2><div class="unit-list">${next}</div></section>`;
+      ${rows}${next ? `<section class="grade"><h2>Urmează</h2><div class="unit-list">${next}</div></section>` : ''}`;
   });
 
   function norm(s) {
