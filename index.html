@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hobby Place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#D6E2FC">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hobby Place">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+<div id="app"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/core.js"></script>
+<script src="js/data-books.js"></script>
+<script src="js/chapters.js"></script>
+<script src="books/index.js"></script>
+<script src="js/data-spanish.js"></script>
+<script src="js/data-spanish-2.js"></script>
+<script src="js/math.js"></script>
+<script src="js/daily.js"></script>
+<script src="js/tutorials.js"></script>
+<script src="js/sudoku.js"></script>
+<script src="js/kakuro.js"></script>
+<script src="js/nonogram.js"></script>
+<script src="js/wordsearch.js"></script>
+<script src="js/coloring-pages.js"></script>
+<script src="js/reading.js"></script>
+<script src="js/data-math-plan.js"></script>
+<script src="js/data-math-weeks.js"></script>
+<script src="js/data-claude-course-1.js"></script>
+<script src="js/data-claude-course-2.js"></script>
+<script src="js/data-courses.js"></script>
+<script src="js/course.js"></script>
+<script src="js/data-stories.js"></script>
+<script src="js/data-spanish-3.js"></script>
+<script src="js/epub.js"></script>
+<script src="js/stories.js"></script>
+<script src="js/word-practice.js"></script>
+<script src="js/learning.js"></script>
+<script src="js/home.js"></script>
+<script>
+HP.start();
+if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
