@@ -53,7 +53,7 @@
         </label>
         <div class="results" id="results"></div>
         <div style="padding-top:6px">
-          ${ticket('#/citit', '#5B6CB2', '#FFF', '100 de clasice și cărți non-fiction', 'Citit', 'book', read, read === 1 ? 'citită' : 'citite')}
+          ${ticket('#/citit', '#5B6CB2', '#FFF', 'Clasice, non-fiction și povestiri scurte', 'Citit', 'book', read, read === 1 ? 'citită' : 'citite')}
           ${ticket('#/hobby', '#FF9F9F', '#14172B', 'Jocuri de logică și colorat', 'Hobby', 'grid', 5, 'activități')}
           ${ticket('#/learning', '#DDF28B', '#14172B', 'Spaniolă, Matematică 5–12, Examen Claude', 'Learning', 'cap', 3, 'materii')}
         </div>

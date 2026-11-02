@@ -78,17 +78,25 @@
   }
 
   let currentFilter = 'toate';
+  let currentQuery = '';
+
+  // Cautarea nu tine cont de diacritice si de litere mari.
+  const plain = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const matches = (b, q) => q.split(/\s+/).every((w) => plain(`${b.title} ${b.orig} ${b.author}`).includes(w));
 
   route(/^\/citit$/, () => {
     const view = mount({ section: 'citit' });
     const done = Object.values(state.books).filter((b) => b.done).length;
     view.innerHTML = `<section class="headrow">
-      <div><h1 class="h1">Biblioteca</h1><p class="lead">100 de clasice și ${window.BOOKS.length - 100} de cărți non-fiction.</p></div>
+      <div><h1 class="h1">Biblioteca</h1><p class="lead">${window.BOOKS.length} de titluri: clasice, non-fiction, povestiri scurte și poezie.</p></div>
       <div class="panel" style="flex:1 1 280px;max-width:420px;padding:14px 18px;border-radius:20px">
         <div style="display:flex;justify-content:space-between;font-weight:800"><span>Raftul tău</span><span>${done}/${window.BOOKS.length}</span></div>
         <div style="height:8px;border-radius:8px;background:var(--blue-soft);margin-top:9px;overflow:hidden"><span style="display:block;width:${Math.round((done / window.BOOKS.length) * 100)}%;height:8px;background:var(--peri)"></span></div>
       </div></section>
       <div class="panel goal-panel">${window.Daily.goalHtml()}</div>
+      <label style="display:block;font-weight:800;margin:14px 0 12px">Caută o carte
+        <input id="book-search" type="search" value="${esc(currentQuery)}" placeholder="Titlu sau autor" autocomplete="off" style="display:block;width:100%;max-width:520px;min-height:48px;margin-top:6px;padding:0 16px;border:2px solid var(--blue-soft);border-radius:16px;background:#FFF;color:inherit;font:inherit;font-weight:600">
+      </label>
       <nav class="chips" aria-label="Filtre" id="filters"></nav>
       <section class="books" id="books" aria-label="Cărți"></section>`;
 
@@ -96,11 +104,16 @@
       view.querySelector('#filters').innerHTML = filters.map(([id, label]) =>
         `<button type="button" class="tab${id === currentFilter ? ' on' : ''}" data-f="${id}" aria-pressed="${id === currentFilter}">${label}</button>`).join('');
       const test = filters.find((f) => f[0] === currentFilter)[2];
-      const list = window.BOOKS.filter(test);
+      const q = plain(currentQuery.trim());
+      const list = window.BOOKS.filter((b) => test(b) && (!q || matches(b, q)));
       view.querySelector('#books').innerHTML = list.length
         ? list.map((b) => bookCard(b, window.BOOKS.indexOf(b))).join('')
-        : '<p class="empty" style="grid-column:1/-1">Nicio carte aici încă.</p>';
+        : `<p class="empty" style="grid-column:1/-1">${q ? 'Nicio carte găsită.' : 'Nicio carte aici încă.'}</p>`;
     }
+    view.querySelector('#book-search').addEventListener('input', (e) => {
+      currentQuery = e.target.value;
+      draw();
+    });
     view.querySelector('#filters').addEventListener('click', (e) => {
       const b = e.target.closest('[data-f]');
       if (b) { currentFilter = b.dataset.f; draw(); }

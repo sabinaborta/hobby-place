@@ -133,7 +133,22 @@ Antigona|Antigone|Sofocle|Teatru
 Dhammapada|The Dhammapada|Tradiția budistă|Non-ficțiune
 O pereche de ciorapi de mătase|A Pair of Silk Stockings|Kate Chopin|Povestiri
 Piața spiridușilor|Goblin Market|Christina Rossetti|Poezie
-Ajunul Sfintei Agnes|The Eve of St Agnes|John Keats|Poezie`;
+Ajunul Sfintei Agnes|The Eve of St Agnes|John Keats|Poezie
+Figura din covor|The Figure in the Carpet|Henry James|Povestiri
+Poarta celor o sută de dureri|The Gate of the Hundred Sorrows|Rudyard Kipling|Povestiri
+Marele duel din Winglebury|The Great Winglebury Duel|Charles Dickens|Povestiri
+Mirele tâlhar|The Robber Bridegroom|Frații Grimm|Povestiri
+Povestea bătrânei dădace|The Old Nurse's Story|Elizabeth Gaskell|Povestiri
+Socoteala|The Reckoning|Edith Wharton|Povestiri
+Imn pentru tineretul osândit|Anthem For Doomed Youth|Wilfred Owen|Poezie
+Noaptea se întunecă în jurul meu|The Night is Darkening Round Me|Emily Brontë|Poezie
+Pe plajă, noaptea, singur|On the Beach at Night Alone|Walt Whitman|Poezie
+Caligula|Caligula|Suetoniu|Non-ficțiune
+O alunecare la microscop|A Slip Under the Microscope|H. G. Wells|Povestiri
+Mâine|To-morrow|Joseph Conrad|Povestiri
+Cum pescărușii albaștri prind foc|As Kingfishers Catch Fire|Gerard Manley Hopkins|Poezie
+Foișorul de tei, închisoarea mea|Well, They are Gone, and Here Must I Remain|Samuel Taylor Coleridge|Poezie
+Sindbad Marinarul|Sindbad the Sailor|O mie și una de nopți|Povestiri`;
 
   window.BOOKS = raw.split('\n').map((line, i) => {
     const [title, orig, author, genre, ro] = line.split('|');

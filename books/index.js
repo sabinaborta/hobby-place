@@ -696,5 +696,80 @@ window.BOOK_SOURCES = {
 "src": "Wikisource",
 "url": "https://en.wikisource.org/wiki/Keats%3B_poems_published_in_1820/The_Eve_of_St._Agnes",
 "lang": "en"
+},
+"b135": {
+"src": "Project Gutenberg #645",
+"url": "https://www.gutenberg.org/ebooks/645",
+"lang": "en"
+},
+"b136": {
+"src": "Project Gutenberg #1858",
+"url": "https://www.gutenberg.org/ebooks/1858",
+"lang": "en"
+},
+"b137": {
+"src": "Project Gutenberg #882",
+"url": "https://www.gutenberg.org/ebooks/882",
+"lang": "en"
+},
+"b138": {
+"src": "Project Gutenberg #2591",
+"url": "https://www.gutenberg.org/ebooks/2591",
+"lang": "en"
+},
+"b139": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/The_Old_Nurse%27s_Story",
+"lang": "en"
+},
+"b140": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/The_Descent_of_Man/The_Reckoning",
+"lang": "en"
+},
+"b141": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/Poems_by_Wilfred_Owen/Anthem_for_Doomed_Youth",
+"lang": "en"
+},
+"b142": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/The_Complete_Poems_of_Emily_Bront%C3%AB/The_night_is_darkening_round_me",
+"lang": "en"
+},
+"b143": {
+"src": "Project Gutenberg #1322",
+"url": "https://www.gutenberg.org/ebooks/1322",
+"lang": "en"
+},
+"b144": {
+"src": "Project Gutenberg #6389",
+"url": "https://www.gutenberg.org/ebooks/6389",
+"lang": "en"
+},
+"b145": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/The_Country_of_the_Blind_and_Other_Stories/A_Slip_under_the_Microscope",
+"lang": "en"
+},
+"b146": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/To-morrow_%28Conrad%29",
+"lang": "en"
+},
+"b147": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/As_kingfishers_catch_fire%2C_dragonflies_draw_flame",
+"lang": "en"
+},
+"b148": {
+"src": "Wikisource",
+"url": "https://en.wikisource.org/wiki/This_Lime-Tree_Bower_my_Prison",
+"lang": "en"
+},
+"b149": {
+"src": "Project Gutenberg #128",
+"url": "https://www.gutenberg.org/ebooks/128",
+"lang": "en"
 }
 };
