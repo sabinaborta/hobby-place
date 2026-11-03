@@ -33,7 +33,7 @@
     view.innerHTML = `<div><h1 class="h1">Learning</h1><p class="lead">Lecții pe rând: teorie, exemple, exerciții scrise.</p></div>
       <section class="subjects">
         <a class="subject-row" href="#/learning/spaniola"><span><b>Spaniolă</b><small>După manualul Gente Hoy 1 · ${window.SPANISH_WEEKS.length} săptămâni · ${window.SPANISH_UNITS.length} unități · ${started} începute</small></span><span class="arrow" aria-hidden="true">→</span></a>
-        <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>11 săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>25 de săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="subject-row" href="#/learning/claude"><span><b>Examen Claude (CCAR-F)</b><small>4 săptămâni: lecții, 2 examene de probă, fișe</small></span><span class="arrow" aria-hidden="true">→</span></a>
       </section>`;
   });
