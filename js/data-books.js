@@ -163,7 +163,22 @@ Soția din Bath|The Wife of Bath|Geoffrey Chaucer|Poezie
 Ospățul lui Trimalchio|Trimalchio's Feast|Petroniu|Povestiri
 Căderea lui Icar|The Fall of Icarus|Ovidiu|Poezie
 O, crudule Alexis|O Cruel Alexis|Virgiliu|Poezie
-Kasyan din Frumoasele Pământuri|Kasyan from the Beautiful Lands|Ivan Turgheniev|Povestiri`;
+Kasyan din Frumoasele Pământuri|Kasyan from the Beautiful Lands|Ivan Turgheniev|Povestiri
+Aforisme despre iubire și ură|Aphorisms on Love and Hate|Friedrich Nietzsche|Non-ficțiune
+Iason și Medeea|Jason and Medea|Apollonius din Rodos|Epopee
+Leonardo da Vinci|Leonardo da Vinci|Giorgio Vasari|Non-ficțiune
+Doamna Rosie și preotul|Mrs Rosie and the Priest|Giovanni Boccaccio|Povestiri
+Dragul meu tată|My Dearest Father|Wolfgang Amadeus Mozart|Non-ficțiune
+Despre plăcintarii de stradă|Of Street Piemen|Henry Mayhew|Non-ficțiune
+Nebunia lui Cambise|The Madness of Cambyses|Herodot|Non-ficțiune
+Marele incendiu al Londrei|The Great Fire of London|Samuel Pepys|Non-ficțiune
+Călătorii prin țara șerpilor și a perlelor|Travels in the Land of Serpents and Pearls|Marco Polo|Non-ficțiune
+Saga lui Gunnlaug|The Saga of Gunnlaug Serpent-tongue|Saga islandeză|Povestiri
+Delfinii, balenele și gobia|The Dolphins, the Whales and the Gudgeon|Esop|Povestiri
+Il Duro|Il Duro|D. H. Lawrence|Non-ficțiune
+Cum plângem și râdem de același lucru|How We Weep and Laugh at the Same Thing|Michel de Montaigne|Non-ficțiune
+Vino aproape|Come Close|Safo|Poezie
+Urăsc și iubesc|I Hate and I Love|Catul|Poezie`;
 
   window.BOOKS = raw.split('\n').map((line, i) => {
     const [title, orig, author, genre, ro] = line.split('|');

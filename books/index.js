@@ -854,5 +854,80 @@ window.BOOK_SOURCES = {
 "src": "Project Gutenberg #8597",
 "url": "https://www.gutenberg.org/ebooks/8597",
 "lang": "en"
+},
+"b165": {
+"src": "Project Gutenberg #4363",
+"url": "https://www.gutenberg.org/ebooks/4363",
+"lang": "en"
+},
+"b166": {
+"src": "Project Gutenberg #830",
+"url": "https://www.gutenberg.org/ebooks/830",
+"lang": "en"
+},
+"b167": {
+"src": "Project Gutenberg #28420",
+"url": "https://www.gutenberg.org/ebooks/28420",
+"lang": "en"
+},
+"b168": {
+"src": "Project Gutenberg #23700",
+"url": "https://www.gutenberg.org/ebooks/23700",
+"lang": "en"
+},
+"b169": {
+"src": "Project Gutenberg #5307",
+"url": "https://www.gutenberg.org/ebooks/5307",
+"lang": "en"
+},
+"b170": {
+"src": "Project Gutenberg #55998",
+"url": "https://www.gutenberg.org/ebooks/55998",
+"lang": "en"
+},
+"b171": {
+"src": "Project Gutenberg #2707",
+"url": "https://www.gutenberg.org/ebooks/2707",
+"lang": "en"
+},
+"b172": {
+"src": "Project Gutenberg #4167",
+"url": "https://www.gutenberg.org/ebooks/4167",
+"lang": "en"
+},
+"b173": {
+"src": "Project Gutenberg #12410",
+"url": "https://www.gutenberg.org/ebooks/12410",
+"lang": "en"
+},
+"b174": {
+"src": "Project Gutenberg #24421",
+"url": "https://www.gutenberg.org/ebooks/24421",
+"lang": "en"
+},
+"b175": {
+"src": "Project Gutenberg #21",
+"url": "https://www.gutenberg.org/ebooks/21",
+"lang": "en"
+},
+"b176": {
+"src": "Project Gutenberg #9497",
+"url": "https://www.gutenberg.org/ebooks/9497",
+"lang": "en"
+},
+"b177": {
+"src": "Project Gutenberg #3600",
+"url": "https://www.gutenberg.org/ebooks/3600",
+"lang": "en"
+},
+"b178": {
+"src": "Project Gutenberg #42166",
+"url": "https://www.gutenberg.org/ebooks/42166",
+"lang": "en"
+},
+"b179": {
+"src": "Project Gutenberg #18867",
+"url": "https://www.gutenberg.org/ebooks/18867",
+"lang": "en"
 }
 };
