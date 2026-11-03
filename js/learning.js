@@ -1,4 +1,4 @@
-// Learning: lectii cu teorie si exercitii scrise; fara puncte sau animatii.
+// Invatat: lectii cu teorie si exercitii scrise; fara puncte sau animatii.
 (function () {
   const { esc, route, mount, state, save, touch, backIcon } = HP;
 
@@ -30,7 +30,7 @@
   route(/^\/learning$/, () => {
     const view = mount({ section: 'learning', theme: 'study', noCoin: true });
     const started = window.SPANISH_UNITS.filter((u) => unitProgress(u).checked > 0).length;
-    view.innerHTML = `<div><h1 class="h1">Learning</h1><p class="lead">Lecții pe rând: teorie, exemple, exerciții scrise.</p></div>
+    view.innerHTML = `<div><h1 class="h1">Învățat</h1><p class="lead">Lecții pe rând: teorie, exemple, exerciții scrise.</p></div>
       <section class="subjects">
         <a class="subject-row" href="#/learning/spaniola"><span><b>Spaniolă</b><small>După manualul Gente Hoy 1 · ${window.SPANISH_WEEKS.length} săptămâni · ${window.SPANISH_UNITS.length} unități · ${started} începute</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>25 de săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>

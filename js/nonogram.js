@@ -50,7 +50,7 @@
       <p class="lead">Numerele spun câte pătrate pline vin la rând pe fiecare linie și coloană. La final apare un desen.</p><a class="how" href="#/hobby/nonogram/tutorial">Cum se joacă</a></div>
       <section class="grid-cards">${PICS.map((p, i) => {
         const done = state.nonoDone[p.id];
-        return `<a class="card" href="#/hobby/nonogram/${p.id}" style="background:${['#FFF', '#DDF28B', '#CBE6FD', '#EAD8FA', '#FFC6DD', '#DCFBE8'][i % 6]}"><h2>${done ? 'E ' + esc(p.reveal) + '!' : p.title}</h2><p>${p.rows[0].length} × ${p.rows.length}${done ? ' · rezolvat' : ''}</p></a>`;
+        return `<a class="card" href="#/hobby/nonogram/${p.id}"><h2>${done ? 'E ' + esc(p.reveal) + '!' : p.title}</h2><p>${p.rows[0].length} × ${p.rows.length}${done ? ' · rezolvat' : ''}</p></a>`;
       }).join('')}</section>`;
   });
 
@@ -137,7 +137,7 @@
       if (!daily) delete state.games[key];
       save();
       draw();
-      dialog(`E ${pic.reveal}!`, (first ? 'Ai câștigat 40 de puncte.' : 'Ai rezolvat-o din nou.') + (daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''), [
+      dialog(`E ${pic.reveal}!`, (first ? 'Ai rezolvat desenul.' : 'Ai rezolvat-o din nou.') + (daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''), [
         { label: daily ? 'Înapoi la Hobby' : 'Alt desen', href: daily ? '#/hobby' : '#/hobby/nonogram' },
         { label: 'Rămân să privesc', ghost: true },
       ]);
@@ -155,7 +155,7 @@
     });
     view.querySelector('#giveup').addEventListener('click', () => {
       if (finished) return;
-      dialog('Te dai bătut?', daily ? 'Îți arăt desenul. Nu primești puncte, iar ziua de azi nu intră în serie.' : 'Îți arăt desenul. Nu primești puncte.', [
+      dialog('Te dai bătut?', daily ? 'Îți arăt desenul, iar ziua de azi nu intră în serie.' : 'Îți arăt desenul.', [
         { label: 'Arată soluția', onClick: () => {
           g.on = solution.slice();
           g.gaveUp = true;

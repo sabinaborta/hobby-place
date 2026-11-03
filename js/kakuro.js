@@ -252,7 +252,7 @@
       if (daily) window.Daily.complete();
       save();
       draw();
-      dialog('Bravo!', `Toate sumele ies. Ai câștigat ${p} de puncte.${daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''}`, daily
+      dialog('Rezolvat', `Toate sumele ies.${daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''}`, daily
         ? [{ label: 'Înapoi la Hobby', href: '#/hobby' }]
         : [
           { label: 'Altă tablă', onClick: () => { if (location.hash === HREF) start(level); } },
@@ -275,7 +275,7 @@
     view.querySelector('#erase').addEventListener('click', () => set(0));
     view.querySelector('#giveup').addEventListener('click', () => {
       if (finished) return;
-      dialog('Te dai bătut?', daily ? 'Îți arăt o soluție. Nu primești puncte, iar ziua de azi nu intră în serie.' : 'Îți arăt o soluție. Nu primești puncte.', [
+      dialog('Te dai bătut?', daily ? 'Îți arăt o soluție, iar ziua de azi nu intră în serie.' : 'Îți arăt o soluție.', [
         { label: 'Arată soluția', onClick: () => {
           g.cells = solve(g);
           g.gaveUp = true;

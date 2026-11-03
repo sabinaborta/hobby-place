@@ -41,18 +41,8 @@
     save();
   }
 
-  function confetti() {
-    const colors = ['#5B6CB2', '#FF9F9F', '#DDF28B', '#EAD8FA', '#F5B60A', '#CBE6FD'];
-    for (let i = 0; i < 36; i++) {
-      const s = document.createElement('span');
-      s.className = 'confetti';
-      s.style.left = Math.random() * 100 + 'vw';
-      s.style.background = colors[i % colors.length];
-      s.style.animationDelay = Math.random() * 0.5 + 's';
-      document.body.appendChild(s);
-      setTimeout(() => s.remove(), 2400);
-    }
-  }
+  // Stilul serios nu mai are confetti; apelurile din jocuri raman inofensive.
+  function confetti() {}
 
   // actions: [{label, href?, onClick?, ghost?}]
   function dialog(title, text, actions) {
@@ -83,15 +73,14 @@
   function route(pattern, fn) { routes.push([pattern, fn]); }
   function onLeave(fn) { cleanup = fn; }
 
-  const sections = [['Acasă', '#/', 'home'], ['Citit', '#/citit', 'citit'], ['Hobby', '#/hobby', 'hobby'], ['Learning', '#/learning', 'learning']];
+  const sections = [['Acasă', '#/', 'home'], ['Citit', '#/citit', 'citit'], ['Hobby', '#/hobby', 'hobby'], ['Învățat', '#/learning', 'learning']];
 
-  function header(active, noCoin) {
+  function header(active) {
     const tabs = sections.map(([label, href, id]) =>
       `<a class="tab${id === active ? ' on' : ''}" href="${href}"${id === active ? ' aria-current="page"' : ''}>${label}</a>`).join('');
     return `<header class="nav">
       <a class="logo" href="#/">Hobby Place</a>
       <nav class="chips" aria-label="Secțiuni">${tabs}</nav>
-      ${noCoin ? '' : `<div class="coin" aria-label="Puncte"><span class="dot" aria-hidden="true"></span><span id="coin-val">${state.points}</span></div>`}
     </header>`;
   }
 
@@ -101,7 +90,7 @@
   function mount(opts) {
     document.body.dataset.theme = opts.theme || '';
     const app = document.getElementById('app');
-    app.innerHTML = `<div class="page${opts.narrow ? ' narrow' : ''}">${opts.noHeader ? '' : header(opts.section, opts.noCoin)}<div class="stack" id="view" style="gap:26px"></div></div>`;
+    app.innerHTML = `<div class="page${opts.narrow ? ' narrow' : ''}">${opts.noHeader ? '' : header(opts.section)}<div class="stack" id="view" style="gap:26px"></div></div>`;
     window.scrollTo(0, 0);
     return document.getElementById('view');
   }

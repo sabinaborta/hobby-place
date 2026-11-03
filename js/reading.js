@@ -1,8 +1,8 @@
-// Citit: raftul cu 100 de clasice si cititorul.
+// Citit: raftul de carti si cititorul.
 (function () {
   const { esc, route, mount, state, save, toast, addPoints, touch, backIcon, confetti } = HP;
 
-  const covers = [['#5B6CB2', '#FFF'], ['#FF9F9F', '#14172B'], ['#DDF28B', '#14172B'], ['#EAD8FA', '#14172B'], ['#CBE6FD', '#14172B'], ['#FFC6DD', '#14172B'], ['#DCFBE8', '#14172B'], ['#14172B', '#FFF']];
+  const cloths = ['#17473A', '#7C1F2B', '#23387F', '#6F5410', '#3E2B58', '#1F5563', '#5A2A1C'];
 
   // Textele incarcate stau in IndexedDB: localStorage e prea mic pentru carti intregi.
   const memory = {};
@@ -53,7 +53,7 @@
     ['toate', 'Toate', () => true],
     ['curs', 'În curs', (b) => { const s = state.books[b.id]; return s && !s.done && s.pct > 0; }],
     ['citite', 'Citite', (b) => state.books[b.id] && state.books[b.id].done],
-    ['nonfiction', 'Non-fiction', (b) => b.genre === 'Non-ficțiune'],
+    ['nonfiction', 'Non-ficțiune', (b) => b.genre === 'Non-ficțiune'],
     ['roman', 'Romane', (b) => b.genre === 'Roman'],
     ['povestiri', 'Povestiri', (b) => b.genre === 'Povestiri'],
     ['teatru', 'Teatru', (b) => b.genre === 'Teatru'],
@@ -69,12 +69,15 @@
   }
 
   function bookCard(b, i) {
-    const [bg, fg] = covers[i % covers.length];
+    const cloth = cloths[i % cloths.length];
+    const h = 188 + ((i * 37) % 48);
+    const wide = b.title.length > 34 ? ' w3' : b.title.length > 17 ? ' w2' : '';
     const s = state.books[b.id];
     const tag = s && s.done ? 'Citită' : s && s.pct > 0 ? s.pct + '%' : !b.ro && hasRomanian(b.id) ? 'În română' : '';
-    return `<a class="book" href="#/citit/${b.id}" style="background:${bg};color:${fg}">
-      <span>${tag ? `<span class="tag">${tag}</span>` : ''}<span class="b-title" style="display:block">${esc(b.title)}</span></span>
-      <span class="b-author">${esc(b.author)}</span></a>`;
+    const surname = b.author.split(' ').pop();
+    return `<a class="book cloth${wide}" href="#/citit/${b.id}" style="--cloth:${cloth};--h:${h}px" aria-label="${esc(b.title)}, ${esc(b.author)}${tag ? ', ' + tag : ''}">
+      <span class="b-title">${esc(b.title)}</span>
+      <span class="b-foot">${tag ? `<span class="tag">${tag}</span>` : `<span class="b-author">${esc(surname)}</span>`}</span></a>`;
   }
 
   let currentFilter = 'toate';
@@ -88,14 +91,14 @@
     const view = mount({ section: 'citit' });
     const done = Object.values(state.books).filter((b) => b.done).length;
     view.innerHTML = `<section class="headrow">
-      <div><h1 class="h1">Biblioteca</h1><p class="lead">${window.BOOKS.length} de titluri: clasice, non-fiction, povestiri scurte și poezie.</p></div>
-      <div class="panel" style="flex:1 1 280px;max-width:420px;padding:14px 18px;border-radius:20px">
+      <div><h1 class="h1">Biblioteca</h1><p class="lead">${window.BOOKS.length} de titluri: clasice, non-ficțiune, povestiri scurte și poezie.</p></div>
+      <div class="panel" style="flex:1 1 280px;max-width:420px;padding:14px 18px">
         <div style="display:flex;justify-content:space-between;font-weight:800"><span>Raftul tău</span><span>${done}/${window.BOOKS.length}</span></div>
-        <div style="height:8px;border-radius:8px;background:var(--blue-soft);margin-top:9px;overflow:hidden"><span style="display:block;width:${Math.round((done / window.BOOKS.length) * 100)}%;height:8px;background:var(--peri)"></span></div>
+        <div style="height:8px;background:#CFD6CF;margin-top:9px;overflow:hidden"><span style="display:block;width:${Math.round((done / window.BOOKS.length) * 100)}%;height:8px;background:var(--peri)"></span></div>
       </div></section>
       <div class="panel goal-panel">${window.Daily.goalHtml()}</div>
       <label style="display:block;font-weight:800;margin:14px 0 12px">Caută o carte
-        <input id="book-search" type="search" value="${esc(currentQuery)}" placeholder="Titlu sau autor" autocomplete="off" style="display:block;width:100%;max-width:520px;min-height:48px;margin-top:6px;padding:0 16px;border:2px solid var(--blue-soft);border-radius:16px;background:#FFF;color:inherit;font:inherit;font-weight:600">
+        <input id="book-search" type="search" value="${esc(currentQuery)}" placeholder="Titlu sau autor" autocomplete="off" style="display:block;width:100%;max-width:520px;min-height:48px;margin-top:6px;padding:0 16px;border:1px solid var(--line);border-radius:4px;background:var(--sheet);color:inherit;font:inherit;font-weight:400">
       </label>
       <nav class="chips" aria-label="Filtre" id="filters"></nav>
       <section class="books" id="books" aria-label="Cărți"></section>`;
@@ -184,7 +187,7 @@
     function bind() {
       view.querySelector('#toggle-done').addEventListener('click', () => {
         s.done = !s.done;
-        if (s.done) { s.pct = 100; addPoints(50); confetti(); toast('Felicitări! +50 de puncte'); }
+        if (s.done) { s.pct = 100; addPoints(50); confetti(); toast('Carte terminată.'); }
         else s.pct = s.total ? Math.round(((s.ch + 1) / s.total) * 100) : 0;
         save();
         draw();
@@ -277,7 +280,7 @@
             <div class="prose" style="font-size:${s.font || 18}px">${toParas(ch.body, !stored && (inRomanian || (source && source.src.startsWith('Wikisource'))))}</div>
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px">
               <span style="font-weight:800;font-size:14px">${s.pct}%</span>
-              <div style="flex:1 1 120px;height:8px;background:var(--lilac);border-radius:8px;overflow:hidden"><span style="display:block;width:${s.pct}%;height:8px;background:var(--violet)"></span></div>
+              <div style="flex:1 1 120px;height:8px;background:#CFD6CF;overflow:hidden"><span style="display:block;width:${s.pct}%;height:8px;background:var(--violet)"></span></div>
               <button class="btn ghost" type="button" id="prev"${s.ch === 0 ? ' disabled' : ''}>Înapoi</button>
               <button class="btn" type="button" id="next"${s.ch >= chapters.length - 1 ? ' disabled' : ''}>Mai departe</button>
             </div>

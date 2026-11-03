@@ -119,7 +119,7 @@
       r.best = Math.max(r.best, r.streak);
       r.last = today();
       addPoints(30);
-      HP.toast('Ai citit 15 pagini azi! +30 de puncte');
+      HP.toast('Ai citit 15 pagini azi.');
     }
     save();
   }

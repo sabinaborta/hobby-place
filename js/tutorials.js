@@ -137,7 +137,7 @@
           <h1 class="serif tut-title">${esc(s.h)}</h1>
           <div class="tut-body">${s.html || ''}</div>
           <div class="practice" id="practice"></div>
-          <p class="tut-done" id="donemsg" hidden>Bravo, ai rezolvat exercițiul! Poți începe jocul.</p>
+          <p class="tut-done" id="donemsg" hidden>Ai rezolvat exercițiul. Poți începe jocul.</p>
           <div class="chips tut-nav">
             ${i ? '<button class="btn ghost" type="button" id="prev">Înapoi</button>' : ''}
             ${last ? `<a class="btn" href="${T.play}">Începe să joci</a>` : '<button class="btn" type="button" id="next">Mai departe</button>'}
@@ -145,7 +145,7 @@
         </article>`;
       if (s.practice) practice[s.practice](view.querySelector('#practice'), () => {
         view.querySelector('#donemsg').hidden = false;
-        toast('Bravo!');
+        toast('Corect.');
       });
       window.scrollTo(0, 0);
     }

@@ -1,18 +1,15 @@
 :root{
-  --ink:#14172B;--muted:#4A5070;--white:#FFF;--line:#14172B;
-  --blue:#D6E2FC;--blue-soft:#E9F0FF;--peri:#5B6CB2;--coral:#FF9F9F;--coral-soft:#FFE3E3;
-  --lime:#DDF28B;--lime-soft:#F1FAC9;--lilac:#EAD8FA;--sky:#CBE6FD;--mint:#DCFBE8;--pink:#FFC6DD;
-  --violet:#7A2FD6;--ok:#137A4B;--bad:#C92A2A;--user:#1D4FC4;--gold:#F5B60A;
-  --serif:'Merriweather',Georgia,serif;--sans:'Nunito','Segoe UI',system-ui,sans-serif;
+  --ink:#1C2422;--muted:#505B57;--white:#FFF;--line:#9AA69F;
+  --blue:#E2E7E2;--blue-soft:#EEF1EC;--peri:#17473A;--coral:#D9A9A4;--coral-soft:#F5E1DF;
+  --lime:#EFE3B8;--lime-soft:#F7F0D6;--lilac:#E2E7E2;--sky:#CFDDE4;--mint:#D6E6DC;--pink:#E8D3D3;
+  --violet:#3E2B58;--ok:#17603F;--bad:#A3212F;--user:#23387F;--gold:#B88A1E;
+  --stamp:#EFD58F;--wood:#6B4E31;--sheet:#FBFBF7;
+  --serif:'Palatino Linotype','Book Antiqua',Palatino,Gelasio,Georgia,serif;--sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;
   --bg:var(--blue);--chip:var(--blue-soft);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:500;transition:background .25s}
-body[data-theme=hobby]{--bg:var(--coral);--chip:var(--coral-soft)}
-body[data-theme=learning]{--bg:var(--lime);--chip:var(--lime-soft)}
-body[data-theme=reader]{--bg:var(--lilac);--chip:#F5ECFD}
-body[data-theme=lesson]{--bg:var(--sky);--chip:#E5F3FE}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:17px;transition:background .25s}
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font:inherit;color:inherit}
 button{cursor:pointer}
@@ -177,8 +174,6 @@ textarea{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:12
 @keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
 
 /* lectii: sobru, pentru citit si scris */
-body[data-theme=study]{--bg:#F6F5F1;--chip:#ECEAE3}
-body[data-theme=study] .tab.on{background:#FFF}
 .back{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:800;align-self:flex-start}
 .round.small{width:36px;height:36px;background:#FFF;box-shadow:inset 0 0 0 1px #CFCCC2}
 .subjects,.unit-list{display:flex;flex-direction:column;background:#FFF;border:1px solid #CFCCC2;border-radius:14px;overflow:hidden}
@@ -450,3 +445,146 @@ dialog h2{font-family:var(--serif);font-weight:900;font-size:30px;margin-bottom:
 .confetti{position:fixed;top:-20px;width:12px;height:12px;border-radius:3px;z-index:60;pointer-events:none;animation:fall 1.6s linear forwards}
 @keyframes fall{to{transform:translateY(105vh) rotate(540deg)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.confetti{display:none}}
+
+/* ---------- Carti legate in panza ---------- */
+.cloth{position:relative;background-color:var(--cloth,#17473A);color:var(--stamp);background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 1px,transparent 1px 3px)}
+.logo{font-weight:700}
+.nav{border-bottom:1px solid var(--line);padding-bottom:12px;gap:8px 18px}
+.chips{gap:6px}
+.tab{min-height:44px;padding:0 14px;border-radius:0;background:transparent;font-weight:600;font-size:16px}
+.tab:hover{background:transparent;box-shadow:inset 0 -2px 0 var(--line)}
+.tab.on{background:transparent;font-weight:700;box-shadow:inset 0 -3px 0 var(--peri)}
+#filters .tab{background:var(--sheet);box-shadow:inset 0 0 0 1px var(--line);border-radius:3px;font-size:15px}
+#filters .tab.on{background:var(--peri);color:var(--stamp);box-shadow:none}
+.h1,.t-title,.s-title,.card h2,.stat b,.key,.timer,.streak b,.unit-n,.lesson h2,dialog h2,.draw-card h2,#my-pages h2{font-weight:700}
+.h1{font-size:clamp(30px,4vw,42px)}
+.lead{font-weight:400;font-size:18px}
+.panel{background:var(--sheet);border:1px solid var(--line);border-radius:4px}
+.btn{border-radius:3px;background:var(--peri);color:var(--stamp);font-weight:700}
+.btn:hover{background:#0F3429}
+.btn.ghost{background:var(--sheet);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.btn.ghost:hover{background:var(--blue-soft)}
+.round{background:var(--sheet)}
+.search{min-height:52px;border:1px solid var(--line);border-radius:4px;background:var(--sheet)}
+.search input{font-weight:400}
+.result{border-radius:3px;background:var(--sheet);font-weight:600;box-shadow:inset 0 0 0 1px #CDD4CE}
+.result small{font-weight:400}
+.row{border-radius:3px;min-height:60px}
+.row.recent{background:var(--blue-soft)}
+.daily-row{background:var(--peri);color:var(--stamp);font-family:var(--serif);font-weight:700}
+.bar{border-radius:0;background:#CFD6CF}
+.fill{border-radius:0}
+.r-title{font-size:16px}
+.r-end{font-weight:600}
+.empty{border-radius:3px;font-weight:400}
+.today-h{font-family:var(--serif);font-size:21px;font-weight:700}
+.goal-top{font-weight:400}
+.goal-bar{border-radius:0;background:#CFD6CF}
+.goal-bar span{border-radius:0}
+.goal-panel{border-radius:4px}
+
+/* volume pe prima pagina */
+.vols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.vol{display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:400px;padding:30px 24px 24px 30px;text-align:center;border-radius:3px 6px 6px 3px;font-family:var(--serif)}
+.vol::before{content:'';position:absolute;inset:9px 9px 9px 18px;border:1.5px solid rgba(239,213,143,.6);pointer-events:none}
+.vol::after{content:'';position:absolute;top:0;bottom:0;left:0;width:9px;background:rgba(0,0,0,.2)}
+.vol h2{font-size:clamp(32px,4.4vw,48px);font-weight:700;margin-top:22px}
+.vol ul{list-style:none;margin:0;padding:0;font-size:18px;line-height:1.8}
+.vol p{font-family:var(--sans);font-size:15px}
+.today{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+
+/* raftul din biblioteca */
+.books{display:flex;flex-wrap:wrap;align-items:flex-end;align-content:flex-start;gap:0 3px;padding:0 10px;background:repeating-linear-gradient(to bottom,transparent 0 236px,var(--wood) 236px 246px,transparent 246px 262px)}
+.book{writing-mode:vertical-rl;flex:none;width:46px;height:var(--h);margin:calc(236px - var(--h)) 0 26px;aspect-ratio:auto;padding:10px 3px;display:flex;flex-direction:row;justify-content:space-between;align-items:stretch;gap:8px;border-radius:2px;overflow:hidden;-webkit-mask:none;mask:none;font-family:var(--serif);transition:transform .15s;background-color:var(--cloth)}
+.book.w2{width:60px}
+.book.w3{width:76px}
+.book:hover{transform:translateY(-5px)}
+.b-title{display:block;flex:1 1 auto;min-height:0;margin:0;font-size:15px;font-weight:700;line-height:1.2;overflow:hidden;overflow-wrap:break-word}
+.b-foot{flex:none;display:block;text-align:right}
+.b-author{font-family:var(--sans);font-weight:400;font-size:12px}
+.books .tag{padding:0;border-radius:0;background:none;color:#FFF;font-family:var(--sans);font-size:12px;font-weight:700}
+.books .empty{writing-mode:horizontal-tb;margin-bottom:26px;width:100%}
+
+/* carduri de hobby, ca niste coperte */
+.grid-cards>.card{--cloth:#17473A;background-color:var(--cloth);color:var(--stamp);background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 1px,transparent 1px 3px);border-radius:3px 6px 6px 3px;-webkit-mask:none;mask:none;min-height:170px;padding:26px 24px 24px 30px;position:relative;font-family:var(--serif);outline:1.5px solid rgba(239,213,143,.5);outline-offset:-9px}
+.grid-cards>.card:nth-child(5n+2){--cloth:#7C1F2B}
+.grid-cards>.card:nth-child(5n+3){--cloth:#23387F}
+.grid-cards>.card:nth-child(5n+4){--cloth:#6F5410}
+.grid-cards>.card:nth-child(5n){--cloth:#3E2B58}
+.card:hover{transform:translateY(-3px)}
+.card p{font-family:var(--sans);font-weight:400;font-size:16px;color:#F5ECCF}
+.daily-card{border-radius:4px;background-color:var(--peri);color:var(--stamp)}
+.daily-card h2{font-family:var(--serif);font-weight:700}
+.daily-card .btn{background:var(--stamp);color:#17473A}
+.day{border-radius:3px;background:rgba(255,255,255,.14)}
+.day.on{background:var(--stamp);color:#17473A}
+.how-line{font-weight:400}
+
+/* pagini de lucru */
+.reader-main{border-radius:4px;background:var(--sheet)}
+.prose{font-size:1.04em}
+.lesson,.subjects,.unit-list,.word-list,.plan-box{background:var(--sheet);border-color:var(--line);border-radius:4px}
+.subject-row:hover,a.unit-row:hover{background:var(--blue-soft)}
+.subject-row b,.unit-main b{font-weight:700}
+.unit-row.current{background:var(--sheet);box-shadow:inset 4px 0 0 var(--peri)}
+.formula{background:var(--peri);color:var(--stamp);border-radius:2px;font-size:18px}
+.frac span:first-child{border-bottom-color:var(--stamp)}
+.goals,.solution,.note{background:var(--blue-soft);border-radius:2px}
+.worked{border-color:var(--line);border-radius:2px}
+.fill{border-radius:0}
+input.fill{background:var(--blue-soft)}
+.tool,.chip,.key,.pill,.swatch,.drill-opt,.own-in,textarea{border-radius:3px}
+.tool{border-width:1px;font-weight:700;background:var(--sheet)}
+.tool.on,.chip.on{background:var(--peri);color:var(--stamp)}
+.chip{background:var(--sheet)}
+.key{background:var(--blue-soft)}
+.key:hover{background:var(--lime)}
+.ch{border-radius:2px}
+.ch.on{background:var(--peri);color:var(--stamp)}
+.tag{border-radius:2px}
+.word{border-radius:3px}
+textarea,.own-in{background:var(--sheet);border-width:1px}
+.back{font-weight:600}
+.empty,.result,.draw-card{font-weight:400}
+
+/* tablele de joc */
+.sudoku{border-width:3px;border-radius:2px;background:var(--sheet)}
+.c{background:var(--sheet);border-color:#AEB8B1}
+.kakuro,.ws,.draw-card{border-width:1px;border-radius:4px;background:var(--sheet)}
+.k{border-radius:2px}
+.k.w{border-width:1px;background:var(--sheet)}
+.nono{border-width:2px;border-radius:2px;background:#AEB8B1}
+.tut-board{border-width:2px;border-radius:2px;background:#AEB8B1}
+.n-cell,.n-clue,.tc{background:var(--sheet)}
+.w-c{border-radius:2px;background:var(--blue-soft)}
+.canvas,.page-stage{border-width:2px;border-radius:3px}
+.draw-card svg{border-width:1.5px;border-radius:2px}
+.shape.hint{fill:#DFE5E0}
+
+/* calendar si ferestre */
+.cal-day{border-radius:3px}
+.cal-day.on{background:var(--peri);color:var(--stamp)}
+.cal-day.now{box-shadow:0 0 0 2px var(--gold)}
+.cal-read{background:var(--gold)}
+.badge{border-radius:3px;background:var(--blue-soft);color:var(--muted)}
+.badge.on{background:var(--lime);color:var(--ink)}
+dialog{border:1px solid var(--line);border-radius:6px;background:var(--sheet)}
+dialog::backdrop{background:rgba(20,30,27,.5)}
+#toast{border-radius:3px;background:var(--peri);color:var(--stamp);font-weight:700}
+.tut-done,.end-note{border-radius:3px}
+.word-panel{border-radius:4px}
+
+@media (hover:none){.book:hover,.grid-cards>.card:hover{transform:none}}
+@media (max-width:699px){
+  .vols{grid-template-columns:1fr}
+  .vol{min-height:0;padding:26px 24px 22px 30px;gap:12px}
+  .vol h2{margin-top:0}
+  .vol ul{display:flex;flex-wrap:wrap;justify-content:center;gap:0 14px;font-size:16px;line-height:1.6}
+  .today{grid-template-columns:1fr}
+  .books{padding:0 4px}
+}
+@media (prefers-reduced-motion:reduce){.book,.card{transition:none}}
+@media (min-width:700px) and (max-width:1180px){
+  .sudoku,.kakuro,.ws{max-width:min(620px,calc(100vh - 225px))}
+  .nono{max-width:min(640px,calc(100vh - 225px))}
+}

@@ -52,7 +52,7 @@
   route(/^\/hobby\/careu$/, () => {
     const view = mount({ section: 'hobby', theme: 'hobby' });
     view.innerHTML = `<div><h1 class="h1">Careu de cuvinte</h1><p class="lead">Alege o temă.</p></div>
-      <section class="grid-cards">${THEMES.map((t, i) => `<a class="card" href="#/hobby/careu/${t.id}" style="background:${['#FFF', '#DDF28B', '#EAD8FA', '#CBE6FD'][i]}"><h2>${esc(t.title)}</h2><p>${t.words.length} cuvinte</p></a>`).join('')}</section>`;
+      <section class="grid-cards">${THEMES.map((t, i) => `<a class="card" href="#/hobby/careu/${t.id}"><h2>${esc(t.title)}</h2><p>${t.words.length} cuvinte</p></a>`).join('')}</section>`;
   });
 
   route(/^\/hobby\/careu\/(\w+)$/, (id) => {
@@ -119,7 +119,7 @@
           confetti();
           if (isDaily) { g.won = true; window.Daily.complete(); } else delete state.games[key];
           save();
-          dialog('Bravo!', 'Ai găsit toate cuvintele.' + (isDaily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''), isDaily
+          dialog('Rezolvat', 'Ai găsit toate cuvintele.' + (isDaily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''), isDaily
             ? [{ label: 'Înapoi la Hobby', href: '#/hobby' }]
             : [
               { label: 'Careu nou', onClick: () => HP.render() },

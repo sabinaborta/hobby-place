@@ -205,10 +205,10 @@
       if (daily) window.Daily.complete();
       save();
       draw();
-      dialog('Bravo!', `Ai terminat în ${t} și ai câștigat ${p} de puncte.${daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''}`, daily
+      dialog('Rezolvat', `Ai terminat în ${t}.${daily ? ' Seria ta: ' + window.Daily.streak() + '.' : ''}`, daily
         ? [{ label: 'Înapoi la Hobby', href: '#/hobby' }]
         : [
-          { label: 'Alt puzzle', onClick: () => { if (location.hash === HREF) start(level); } },
+          { label: 'Alt joc', onClick: () => { if (location.hash === HREF) start(level); } },
           { label: 'Înapoi la Hobby', href: '#/hobby', ghost: true },
         ]);
     }
@@ -234,15 +234,15 @@
       const b = e.target.closest('[data-l]');
       if (!b) return;
       if (!finished && g.cells.some((v, i) => v && !g.puzzle[i])) {
-        dialog('Începi un puzzle nou?', 'Puzzle-ul curent se pierde.', [
-          { label: 'Da, puzzle nou', onClick: () => start(b.dataset.l) },
+        dialog('Începi un joc nou?', 'Jocul curent se pierde.', [
+          { label: 'Da, joc nou', onClick: () => start(b.dataset.l) },
           { label: 'Rămân aici', ghost: true },
         ]);
       } else start(b.dataset.l);
     });
     view.querySelector('#giveup').addEventListener('click', () => {
       if (finished) return;
-      dialog('Te dai bătut?', daily ? 'Îți arăt soluția. Nu primești puncte, iar ziua de azi nu intră în serie.' : 'Îți arăt soluția. Nu primești puncte.', [
+      dialog('Te dai bătut?', daily ? 'Îți arăt soluția, iar ziua de azi nu intră în serie.' : 'Îți arăt soluția.', [
         { label: 'Arată soluția', onClick: () => {
           g.cells = g.sol.slice();
           g.notes = {};
