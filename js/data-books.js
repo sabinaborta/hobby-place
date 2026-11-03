@@ -148,7 +148,22 @@ O alunecare la microscop|A Slip Under the Microscope|H. G. Wells|Povestiri
 Mâine|To-morrow|Joseph Conrad|Povestiri
 Cum pescărușii albaștri prind foc|As Kingfishers Catch Fire|Gerard Manley Hopkins|Poezie
 Foișorul de tei, închisoarea mea|Well, They are Gone, and Here Must I Remain|Samuel Taylor Coleridge|Poezie
-Sindbad Marinarul|Sindbad the Sailor|O mie și una de nopți|Povestiri`;
+Sindbad Marinarul|Sindbad the Sailor|O mie și una de nopți|Povestiri
+Circe și Ciclopul|Circe and the Cyclops|Homer|Epopee
+Cercurile Iadului|Circles of Hell|Dante Alighieri|Epopee
+Agrișe|Gooseberries|Anton Cehov|Povestiri
+Nasul|The Nose|Nikolai Gogol|Povestiri
+Amnarul|The Tinderbox|Hans Christian Andersen|Povestiri
+Liturghia ateului|The Atheist's Mass|Honoré de Balzac|Povestiri
+O inimă simplă|A Simple Heart|Gustave Flaubert|Povestiri
+Comerțul|Traffic|John Ruskin|Non-ficțiune
+Vocea|Woman Much Missed|Thomas Hardy|Poezie
+Rechinul din Maldive|The Maldive Shark|Herman Melville|Poezie
+Soția din Bath|The Wife of Bath|Geoffrey Chaucer|Poezie
+Ospățul lui Trimalchio|Trimalchio's Feast|Petroniu|Povestiri
+Căderea lui Icar|The Fall of Icarus|Ovidiu|Poezie
+O, crudule Alexis|O Cruel Alexis|Virgiliu|Poezie
+Kasyan din Frumoasele Pământuri|Kasyan from the Beautiful Lands|Ivan Turgheniev|Povestiri`;
 
   window.BOOKS = raw.split('\n').map((line, i) => {
     const [title, orig, author, genre, ro] = line.split('|');

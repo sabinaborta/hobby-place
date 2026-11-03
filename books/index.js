@@ -771,5 +771,88 @@ window.BOOK_SOURCES = {
 "src": "Project Gutenberg #128",
 "url": "https://www.gutenberg.org/ebooks/128",
 "lang": "en"
+},
+"b150": {
+"src": "Project Gutenberg #1727",
+"url": "https://www.gutenberg.org/ebooks/1727",
+"lang": "en",
+"ro": {
+"src": "Wikisource",
+"url": "https://ro.wikisource.org/wiki/Odiseea"
+}
+},
+"b151": {
+"src": "Project Gutenberg #1001",
+"url": "https://www.gutenberg.org/ebooks/1001",
+"lang": "en",
+"ro": {
+"src": "Wikisource",
+"url": "https://ro.wikisource.org/wiki/Divina_Comedie"
+}
+},
+"b152": {
+"src": "Project Gutenberg #1883",
+"url": "https://www.gutenberg.org/ebooks/1883",
+"lang": "en"
+},
+"b153": {
+"src": "Project Gutenberg #36238",
+"url": "https://www.gutenberg.org/ebooks/36238",
+"lang": "en"
+},
+"b154": {
+"src": "Project Gutenberg #27200",
+"url": "https://www.gutenberg.org/ebooks/27200",
+"lang": "en"
+},
+"b155": {
+"src": "Project Gutenberg #1220",
+"url": "https://www.gutenberg.org/ebooks/1220",
+"lang": "en"
+},
+"b156": {
+"src": "Project Gutenberg #1253",
+"url": "https://www.gutenberg.org/ebooks/1253",
+"lang": "en"
+},
+"b157": {
+"src": "Project Gutenberg #26716",
+"url": "https://www.gutenberg.org/ebooks/26716",
+"lang": "en"
+},
+"b158": {
+"src": "Project Gutenberg #2863",
+"url": "https://www.gutenberg.org/ebooks/2863",
+"lang": "en"
+},
+"b159": {
+"src": "Project Gutenberg #12841",
+"url": "https://www.gutenberg.org/ebooks/12841",
+"lang": "en"
+},
+"b160": {
+"src": "Project Gutenberg #2383",
+"url": "https://www.gutenberg.org/ebooks/2383",
+"lang": "en"
+},
+"b161": {
+"src": "Project Gutenberg #5219",
+"url": "https://www.gutenberg.org/ebooks/5219",
+"lang": "en"
+},
+"b162": {
+"src": "Project Gutenberg #26073",
+"url": "https://www.gutenberg.org/ebooks/26073",
+"lang": "en"
+},
+"b163": {
+"src": "Project Gutenberg #230",
+"url": "https://www.gutenberg.org/ebooks/230",
+"lang": "en"
+},
+"b164": {
+"src": "Project Gutenberg #8597",
+"url": "https://www.gutenberg.org/ebooks/8597",
+"lang": "en"
 }
 };
