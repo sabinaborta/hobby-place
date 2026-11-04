@@ -574,6 +574,50 @@ dialog::backdrop{background:rgba(20,30,27,.5)}
 .tut-done,.end-note{border-radius:3px}
 .word-panel{border-radius:4px}
 
+/* lectia zilei si jurnalul */
+.daily-lesson{font-family:var(--serif);font-size:19px;line-height:1.65}
+.daily-lesson p+p,.daily-lesson h1+p{margin-top:14px}
+.daily-lesson .h1{font-size:clamp(28px,4vw,38px);line-height:1.25}
+.daily-lesson .kicker{font-family:var(--sans);margin-bottom:8px}
+.pick{min-height:52px;padding:10px 16px;text-align:left;border:1px solid var(--ink);border-radius:3px;background:var(--sheet);color:var(--ink);font:inherit;font-size:17px;cursor:pointer}
+.pick:hover:not([disabled]){background:var(--blue-soft)}
+.pick[disabled]{cursor:default;color:var(--ink);opacity:.7}
+.pick.ok{opacity:1;background:var(--peri);border-color:var(--peri);color:var(--stamp);font-weight:700}
+.pick.bad{opacity:1;background:#F4E1E1;border-color:#7C1F2B;color:#5E1420}
+.end-day{display:flex;flex-direction:column;gap:2px;margin:14px 0 8px;padding:14px 16px;border-left:4px solid var(--peri);background:var(--blue-soft)}
+.end-day b{font-size:21px}
+.r-title{display:block}
+.r-sub{display:block;font-size:15px;line-height:1.35;color:var(--muted)}
+.journal-box{width:100%;padding:14px 16px;border:1px solid var(--ink);font:inherit;font-family:var(--serif);font-size:19px;line-height:1.55;resize:vertical}
+.journal-note{font-size:15px;color:var(--muted)}
+.journal-day{padding:12px 16px;border:1px solid var(--line);border-radius:3px;background:var(--sheet)}
+.journal-day summary{min-height:32px;cursor:pointer;font-weight:700}
+.journal-day summary small{display:block;font-weight:400;font-size:15px;color:var(--muted)}
+.journal-day p{margin-top:10px;font-family:var(--serif);font-size:18px;line-height:1.55;white-space:pre-wrap}
+
+/* geografie */
+.geo-work{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:start}
+.geo-map{position:relative;border:1px solid var(--line);border-radius:4px;background:#D8E3E4;overflow:hidden}
+.geo-map svg{display:block;width:100%;height:auto;max-height:calc(100vh - 190px);touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
+.geo-context{fill:#C9CDBF;stroke:#F2F3EC;stroke-width:.6px;vector-effect:non-scaling-stroke;pointer-events:none}
+.geo-land{fill:#F4F1E2;stroke:#6F7D74;stroke-width:.8px;vector-effect:non-scaling-stroke}
+.geo-land[data-mark=on],.geo-land[data-mark=ok]{fill:#17473A}
+.geo-land[data-mark=bad]{fill:#7C1F2B}
+.geo-ring{fill:none;stroke:#B5121B;stroke-width:2.5px;vector-effect:non-scaling-stroke;pointer-events:none}
+.geo-zoom{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px}
+.geo-zoom .tool{width:44px;height:44px;min-height:44px;padding:0;font-size:22px}
+.geo-q{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1.2}
+.geo-side .kicker{margin-bottom:4px}
+.geo-names{display:flex;flex-wrap:wrap;gap:6px;max-height:300px;overflow:auto}
+.geo-name{min-height:40px;padding:4px 10px;border:1px solid var(--line);border-radius:3px;background:var(--sheet);color:var(--ink);font:inherit;font-size:15px;cursor:pointer}
+.geo-name:hover{background:var(--blue-soft)}
+.geo-extra{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.7}
+.end-round{max-width:640px}
+@media (max-width:899px){
+  .geo-work{grid-template-columns:1fr}
+  .geo-map svg{max-height:62vh}
+}
+
 @media (hover:none){.book:hover,.grid-cards>.card:hover{transform:none}}
 @media (max-width:699px){
   .vols{grid-template-columns:1fr}

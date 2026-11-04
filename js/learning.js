@@ -34,6 +34,8 @@
       <section class="subjects">
         <a class="subject-row" href="#/learning/spaniola"><span><b>Spaniolă</b><small>După manualul Gente Hoy 1 · ${window.SPANISH_WEEKS.length} săptămâni · ${window.SPANISH_UNITS.length} unități · ${started} începute</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="subject-row" href="#/learning/matematica"><span><b>Matematică</b><small>25 de săptămâni din planul tău: lecții, exerciții, teste</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="subject-row" href="#/learning/geografie"><span><b>Geografie</b><small>Țările lumii pe hartă și capitalele lor, pe continente</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="subject-row" href="#/learning/lucru-nou"><span><b>Un lucru nou pe zi</b><small>O lecție scurtă: istorie, știință, artă, filosofie, natură</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="subject-row" href="#/learning/claude"><span><b>Examen Claude (CCAR-F)</b><small>4 săptămâni: lecții, 2 examene de probă, fișe</small></span><span class="arrow" aria-hidden="true">→</span></a>
       </section>`;
   });

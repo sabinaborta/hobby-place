@@ -12,6 +12,8 @@
     window.SPANISH_UNITS.forEach((u) => items.push({ t: u.title, s: 'Spaniolă, unitatea ' + u.n, h: '#/learning/spaniola/' + u.id }));
     Object.values(window.COURSES).forEach((c) => c.weeks.forEach((w) => w.sessions.forEach((x) => items.push({ t: x.title, s: `${c.short}, ${w.short}`, h: `#/learning/${c.id}/${w.id}/${x.n}` }))));
     window.MATH_TOPICS.forEach((m) => items.push({ t: m.title, s: 'Matematică, clasa a ' + m.grade + '-a', h: '#/learning/matematica/' + m.id }));
+    items.push({ t: 'Un lucru nou pe zi', s: 'Învățat', h: '#/learning/lucru-nou' }, { t: 'Geografie', s: 'Învățat', h: '#/learning/geografie' }, { t: 'Întrebarea zilei', s: 'Jurnal', h: '#/jurnal' });
+    window.GEO_REGIONS.forEach((r) => items.push({ t: r.name, s: 'Geografie', h: '#/learning/geografie/' + r.id }));
     return items;
   }
 
@@ -35,12 +37,14 @@
       <section class="vols" aria-label="Secțiuni">
         ${volume('#/citit', '#17473A', 'Citit', ['Clasice', 'Non-ficțiune', 'Povestiri scurte', 'Poezie'], `${window.BOOKS.length} de titluri`)}
         ${volume('#/hobby', '#7C1F2B', 'Hobby', ['Sudoku', 'Kakuro', 'Nonogram', 'Careu, colorat'], `Provocarea zilei: ${esc(window.Daily.game().name)}`)}
-        ${volume('#/learning', '#23387F', 'Învățat', ['Spaniolă', 'Matematică', 'Examen Claude'], '3 materii')}
+        ${volume('#/learning', '#23387F', 'Învățat', ['Spaniolă', 'Matematică', 'Geografie', 'Un lucru nou pe zi'], 'Lecții pe rând')}
       </section>
       <section class="today">
         <div class="panel stack">
           ${window.Daily.goalHtml()}
           <a class="row daily-row" href="${window.Daily.game().href}"><span style="flex:1">Provocarea zilei: ${esc(window.Daily.game().name)}</span><span class="r-end">${window.Daily.doneToday() ? 'Gata' : window.Daily.streak() + ' zile'}</span></a>
+          <a class="row recent" href="#/learning/lucru-nou"><span style="flex:1;min-width:0"><span class="r-title">Un lucru nou</span><span class="r-sub">${esc(window.Novelty.todayLesson().title)}</span></span><span class="r-end">${window.Novelty.doneToday() ? 'Gata' : ''}</span></a>
+          <a class="row recent" href="#/jurnal"><span style="flex:1;min-width:0"><span class="r-title">Întrebarea zilei</span><span class="r-sub">${esc(window.Journal.questionToday())}</span></span><span class="r-end">${window.Journal.doneToday() ? 'Gata' : ''}</span></a>
         </div>
         <div class="panel stack">
           <h2 class="today-h">Continuă de unde ai rămas</h2>
