@@ -9,7 +9,8 @@
     window.BOOKS.forEach((b) => items.push({ t: b.title, s: b.author, h: '#/citit/' + b.id }));
     [['Sudoku', 'sudoku'], ['Kakuro', 'kakuro'], ['Nonogram', 'nonogram'], ['Careu de cuvinte', 'careu'], ['Colorat', 'colorat']].forEach(([t, id]) => items.push({ t, s: 'Hobby', h: '#/hobby/' + id }));
     window.STORIES.forEach((x) => items.push({ t: x.title, s: 'Poveste în spaniolă', h: '#/learning/spaniola/povesti/' + x.id }));
-    window.SPANISH_UNITS.forEach((u) => items.push({ t: u.title, s: 'Spaniolă, unitatea ' + u.n, h: '#/learning/spaniola/' + u.id }));
+    window.ENGLISH_STORIES.forEach((x) => items.push({ t: x.title, s: 'Poveste în engleză', h: '#/learning/engleza/povesti/' + x.id }));
+    window.LANGS.forEach((L) => L.units.forEach((u) => items.push({ t: u.title, s: `${L.name}, unitatea ${u.n}`, h: `#/learning/${L.id}/${u.id}` })));
     Object.values(window.COURSES).forEach((c) => c.weeks.forEach((w) => w.sessions.forEach((x) => items.push({ t: x.title, s: `${c.short}, ${w.short}`, h: `#/learning/${c.id}/${w.id}/${x.n}` }))));
     window.MATH_TOPICS.forEach((m) => items.push({ t: m.title, s: 'Matematică, clasa a ' + m.grade + '-a', h: '#/learning/matematica/' + m.id }));
     items.push({ t: 'Un lucru nou pe zi', s: 'Învățat', h: '#/learning/lucru-nou' }, { t: 'Geografie', s: 'Învățat', h: '#/learning/geografie' }, { t: 'Întrebarea zilei', s: 'Jurnal', h: '#/jurnal' });
@@ -37,7 +38,7 @@
       <section class="vols" aria-label="Secțiuni">
         ${volume('#/citit', '#17473A', 'Citit', ['Clasice', 'Non-ficțiune', 'Povestiri scurte', 'Poezie'], `${window.BOOKS.length} de titluri`)}
         ${volume('#/hobby', '#7C1F2B', 'Hobby', ['Sudoku', 'Kakuro', 'Nonogram', 'Careu, colorat'], `Provocarea zilei: ${esc(window.Daily.game().name)}`)}
-        ${volume('#/learning', '#23387F', 'Învățat', ['Spaniolă', 'Matematică', 'Geografie', 'Un lucru nou pe zi'], 'Lecții pe rând')}
+        ${volume('#/learning', '#23387F', 'Învățat', ['Spaniolă, engleză', 'Matematică', 'Geografie', 'Un lucru nou pe zi'], 'Lecții pe rând')}
       </section>
       <section class="today">
         <div class="panel stack">
