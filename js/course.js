@@ -67,7 +67,7 @@
   }
 
   // ---------- Pagina cursului ----------
-  route(/^\/learning\/(matematica|claude)$/, (cid) => {
+  route(/^\/learning\/(matematica|claude|dp600)$/, (cid) => {
     const c = window.COURSES[cid];
     const view = screen();
     view.innerHTML = `${backLink('#/learning', 'Materii')}
@@ -84,7 +84,7 @@
   });
 
   // ---------- Pagina saptamanii ----------
-  route(/^\/learning\/(matematica|claude)\/(s\d+)$/, (cid, wid) => {
+  route(/^\/learning\/(matematica|claude|dp600)\/(s\d+)$/, (cid, wid) => {
     const c = window.COURSES[cid];
     const wk = c.weeks.find((x) => x.id === wid);
     if (!wk) { location.hash = `#/learning/${cid}`; return; }
@@ -263,11 +263,11 @@
 
   function examPage(c, wk, s, w) {
     const view = screen();
-    if (!window.CLAUDE_DATA) {
+    if (!c.data) {
       view.innerHTML = `${backLink(`#/learning/${c.id}/${wk.id}`, wk.short || wk.title)}<p class="empty">Examenele de probă sunt disponibile doar în copia de pe calculatorul tău.</p>`;
       return;
     }
-    const exam = window.CLAUDE_DATA.exams[s.exam];
+    const exam = c.data.exams[s.exam];
     const back = backLink(`#/learning/${c.id}/${wk.id}`, wk.short || wk.title);
     const cur = () => w.exams[s.n];
     const left = () => Math.max(0, Math.round((cur().endsAt - Date.now()) / 1000));
@@ -313,7 +313,7 @@
       const e = cur();
       if (!e) {
         view.innerHTML = `${back}<article class="lesson math"><header><p class="kicker">Sesiunea ${s.n}</p><h1 class="h1">${esc(exam.title)}</h1><p class="lead">${exam.items.length} de întrebări, ${exam.minutes} de minute, ca la examenul real.</p></header>
-          <ul><li>Întrebările sunt în engleză, ca la examen.</li><li>Fiecare întrebare spune câte răspunsuri alegi. Primești punct doar dacă le alegi exact pe cele corecte.</li><li>Fără notițe. Cronometrul continuă și dacă ieși din pagină.</li><li>Ținte: 85% la prima încercare, 90% înainte de examenul real. Pragul real este 720 din 1 000.</li></ul>
+          <ul><li>Întrebările sunt în engleză, ca la examen.</li><li>Fiecare întrebare spune câte răspunsuri alegi. Primești punct doar dacă le alegi exact pe cele corecte.</li><li>Fără notițe. Cronometrul continuă și dacă ieși din pagină.</li><li>${c.examTarget}</li></ul>
           <div><button class="btn" type="button" id="start">Pornește examenul</button></div></article>`;
         return;
       }
@@ -343,7 +343,7 @@
       const verdict = e.score >= 90 ? 'Ești gata pentru examen. Recitește doar punctele slabe.'
         : e.score >= 85 ? 'Ești pe drumul bun. Recitește domeniile la care ai greșit.'
         : e.score >= 70 ? 'Recitește lecțiile domeniilor slabe și reia întrebările greșite.'
-        : 'Reia lecțiile în ordinea domeniilor 1, 2, 3, 4, 5, apoi dă din nou examenul.';
+        : c.retryOrder;
       const list = reviewFilter === 'toate' ? exam.items : exam.items.filter((it) => !sameSet(e.answers[it.n] || [], it.ans));
       view.innerHTML = `${back}<article class="lesson math"><header><p class="kicker">Rezultat</p><h1 class="h1">${e.score}%</h1><p class="lead">${e.correct} din ${exam.items.length} corecte. ${esc(verdict)}</p></header>
         <div class="tbl"><table><thead><tr><th>Domeniu</th><th>Corecte</th><th>%</th></tr></thead><tbody>${Object.keys(doms).sort().map((d) => `<tr><td>${esc(d)}</td><td>${doms[d].ok}/${doms[d].all}</td><td>${Math.round((doms[d].ok / doms[d].all) * 100)}%</td></tr>`).join('')}</tbody></table></div>
@@ -398,11 +398,11 @@
   // ---------- Fise de recapitulare ----------
   function cardsPage(c, wk, s, w) {
     const view = screen();
-    if (!window.CLAUDE_DATA) {
+    if (!c.data) {
       view.innerHTML = `${backLink(`#/learning/${c.id}/${wk.id}`, wk.short || wk.title)}<p class="empty">Fișele sunt disponibile doar în copia de pe calculatorul tău.</p>`;
       return;
     }
-    const decks = window.CLAUDE_DATA.decks.filter((d, i) => s.decks.includes(i));
+    const decks = c.data.decks.filter((d, i) => s.decks.includes(i));
     const marks = w.cards[s.n] || (w.cards[s.n] = {});
     const open = {};
     let onlyMissed = false;
@@ -437,7 +437,7 @@
     draw();
   }
 
-  route(/^\/learning\/(matematica|claude)\/(s\d+)\/(\d+)$/, (cid, wid, n) => {
+  route(/^\/learning\/(matematica|claude|dp600)\/(s\d+)\/(\d+)$/, (cid, wid, n) => {
     const c = window.COURSES[cid];
     const wk = c.weeks.find((x) => x.id === wid);
     const s = wk && wk.sessions.find((x) => x.n === Number(n));
