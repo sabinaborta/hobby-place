@@ -127,13 +127,13 @@
       const text = box.value.trim();
       if (text) entries()[key] = { q, text };
       else delete entries()[key];
-      save();
+      return save();
     };
     let timer = null;
     box.addEventListener('input', () => {
       clearTimeout(timer);
       status.textContent = 'Se salvează...';
-      timer = setTimeout(() => { store(); status.textContent = box.value.trim() ? 'Salvat.' : 'Se salvează singur, pe măsură ce scrii.'; }, 500);
+      timer = setTimeout(() => { status.textContent = !store() ? 'Nu s-a salvat. Păstrează o copie a textului.' : box.value.trim() ? 'Salvat.' : 'Se salvează singur, pe măsură ce scrii.'; }, 500);
     });
     box.addEventListener('blur', store);
     onLeave(() => { clearTimeout(timer); store(); });

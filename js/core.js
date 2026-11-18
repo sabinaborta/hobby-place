@@ -9,7 +9,10 @@
   const state = Object.assign({}, defaults, load());
 
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* mod privat: progresul ramane doar in sesiune */ }
+    try { localStorage.setItem(KEY, JSON.stringify(state)); return true; } catch (e) {
+      toast('Nu s-a putut salva: spațiul de stocare e plin sau blocat.');
+      return false;
+    }
   }
 
   function esc(v) {

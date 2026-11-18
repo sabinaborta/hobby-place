@@ -105,8 +105,11 @@
           const book = await window.readEpub(f);
           const stamp = Date.now();
           book.chapters.forEach((c, i) => customs().push({ id: `own${stamp}x${i}`, book: book.title, title: c.title, text: c.text }));
-          save();
-          if (!localStorage.getItem('hobbyplace.v1') || !localStorage.getItem('hobbyplace.v1').includes(String(stamp))) throw new Error('quota');
+          if (!save()) {
+            // Scoatem capitolele din memorie, altfel fiecare salvare urmatoare ar esua.
+            state[L.customKey] = customs().filter((s) => !s.id.startsWith(`own${stamp}x`));
+            throw new Error('quota');
+          }
           HP.render();
         } catch (err) {
           console.error(err);
